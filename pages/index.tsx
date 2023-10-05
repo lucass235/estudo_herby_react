@@ -1,8 +1,45 @@
 import Head from "next/head";
-import React, { useState } from "react";
+import React, { useState, useEffect  } from "react";
 import Main from "../components/Main";
+import styles from "../styles/Home.module.css";
+import Card from "../components/Card";
 
 export default function Home() {
+  const [data, setData] = useState(null);
+  console.log(data);
+  
+  useEffect(() => {
+    fetch("http://localhost:3001/products")
+      .then((res) => res.json())
+      .then((data) => setData(data));
+  }, [setData]);
+  
+  const products = [
+    {
+      name: "product1",
+      image:
+        "https://image1.mobiauto.com.br/images/api/images/v1.0/70965062/transform/fl_progressive,f_webp,q_70,w_592",
+      price: 100,
+    },
+    {
+      name: "product2",
+      image:
+        "https://pilotocaro.com.br/wp-content/uploads/2023/01/Screenshot-2023-01-10-at-00-22-43-ford-ka-se-15-at-2020-1617976451463_v2_900x506.jpg.webp-imagem-WEBP-900-%C3%97-506-pixels.png",
+      price: 200,
+    },
+    {
+      name: "product3",
+      image:
+        "https://www.hyundaibarigui.com.br/wp-content/uploads/2021/09/model_middle_webp_comprar-comfort_b8743d9476.png.png",
+      price: 300,
+    },
+    {
+      name: "product4",
+      image:
+        "https://unnionrentacar.com.br/wp-content/uploads/2023/08/model_main_webp_comprar-iconic-1.png",
+      price: 400,
+    },
+  ];
   return (
     <>
       <Head>
@@ -11,7 +48,21 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Main title="Home" />
+      <main style={{ backgroundColor: "purple" }} className={`${styles.main} `}>
+        <h1>Lucas tech</h1>
+        <div style={{ display: "flex", gap: "20px", flexWrap: "wrap" }}>
+          {products.map((product, index) => {
+            return (
+              <Card
+                key={index}
+                title={product.name}
+                price={product.price}
+                path={product.image}
+              />
+            );
+          })}
+        </div>
+      </main>
     </>
   );
 }

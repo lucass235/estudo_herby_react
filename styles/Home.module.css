@@ -1,7 +1,7 @@
 .main {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   align-items: center;
   padding: 6rem;
   min-height: 100vh;
@@ -44,6 +44,26 @@
   grid-template-columns: repeat(4, minmax(25%, auto));
   max-width: 100%;
   width: var(--max-width);
+}
+
+.cardComponent {
+  height: 200px;
+  width: 300px;
+  border: 3px solid red;
+  border-radius: 20px;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 30px auto;
+  margin-bottom: 10px;
+}
+
+.cardComponent:hover {
+  transform: scale(1.1);
+  transition: all 0.3s ease-in-out;
+  background-color: #c640f7;
 }
 
 .card {
@@ -97,7 +117,7 @@
 
 .center::before,
 .center::after {
-  content: '';
+  content: "";
   left: 50%;
   position: absolute;
   filter: blur(45px);

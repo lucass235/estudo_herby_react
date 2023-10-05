@@ -1,0 +1,24 @@
+{
+  "products": [
+    {
+      "name": "product1",
+      "image": "https://image1.mobiauto.com.br/images/api/images/v1.0/70965062/transform/fl_progressive,f_webp,q_70,w_592",
+      "price": 100
+    },
+    {
+      "name": "product2",
+      "image": "https://pilotocaro.com.br/wp-content/uploads/2023/01/Screenshot-2023-01-10-at-00-22-43-ford-ka-se-15-at-2020-1617976451463_v2_900x506.jpg.webp-imagem-WEBP-900-%C3%97-506-pixels.png",
+      "price": 200
+    },
+    {
+      "name": "product3",
+      "image": "https://www.hyundaibarigui.com.br/wp-content/uploads/2021/09/model_middle_webp_comprar-comfort_b8743d9476.png.png",
+      "price": 300
+    },
+    {
+      "name": "product4",
+      "image": "https://unnionrentacar.com.br/wp-content/uploads/2023/08/model_main_webp_comprar-iconic-1.png",
+      "price": 400
+    }
+  ]
+}
